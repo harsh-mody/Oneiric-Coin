@@ -7,9 +7,12 @@
     "test": "jest --watchAll"
   },
   "keywords": [],
-  "author": "harsh.mody@icloud.com",
+  "author": "Dream Team",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^27.0.6"
+    "jest": "^23.6.0"
+  },
+  "dependencies": {
+    "hex-to-binary": "^1.0.1"
   }
 }
