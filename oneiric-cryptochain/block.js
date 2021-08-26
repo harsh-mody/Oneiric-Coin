@@ -56,7 +56,7 @@ class Block{
             return 1;
         }
 
-        if (difficulty > MINE_RATE){
+        if (difference > MINE_RATE){
             return difficulty - 1;
         }
         return difficulty + 1;
