@@ -9,7 +9,6 @@ describe('Blockchain description',()=>{
     beforeEach(() => {
         blockchain = new Blockchain();
         newChain = new Blockchain();
-
         ogChain = blockchain.chain;
     });
 
@@ -45,14 +44,13 @@ describe('Blockchain description',()=>{
 
             beforeEach(() => {
 
-                blockchain.addBlock({ data: 'Penny'});
-                blockchain.addBlock({ data: 'Penny'});
-                blockchain.addBlock({ data: 'Penny'});
+                blockchain.addBlock({ data: 'Harsh Mody'});
+                blockchain.addBlock({ data: 'Harsh Parikh'});
+                blockchain.addBlock({ data: 'Neeraj Patil'});
                 
             });
             describe('and a lastHash reference has changed', ()=>{
-
-
+                
                 it('returns false', () =>{
                     blockchain.chain[2].lastHash = 'broken lastHash';
 
