@@ -24,7 +24,6 @@ class Block{
     static mineBlock({lastBlock, data}){
         const lastHash = lastBlock.hash;
         let hash, timestamp;
-        // const timestamp = Date.now();
         let { difficulty } = lastBlock; 
         let nonce = 0;
 
@@ -43,7 +42,6 @@ class Block{
             difficulty,
             nonce,
             hash
-            // hash: cryptoHash(timestamp, lastHash, data, nonce, difficulty)
         });
          
     }
@@ -68,12 +66,3 @@ class Block{
 
 module.exports = Block ;
 
-
-// const block1 = new Block({
-//     timestamp: '11/11/11',
-//     hash: 'encrypted data',
-//     lastHash: 'lastHash',
-//     data: 'qwerty'
-// });
-
-// console.log( block1);
