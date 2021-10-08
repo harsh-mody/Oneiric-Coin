@@ -63,6 +63,25 @@ app.post('/api/mine',(req,res)=>{
     res.redirect('/api/blocks');
 });
 
+app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname,'client/dist/index.html'))
+})
+
+app.use(express.static(path.join(__dirname, 'client/dist')))
+
+const walletFoo = new Wallet()
+const walletBar = new Wallet()
+
+const generateWalletTransaction = ({wallet, recipient, amount}) => {
+    const transaction = wallet.createTransaction({
+        recipient, amount, chain: blockchain.chain
+    })
+
+    transactionPool.setTransaction(transaction)
+}
+
+
+
 
 app.post('/api/transact',(req,res)=>{
     let transaction=transactionPool.existingTransaction({inputAddress:wallet.publicKey});
