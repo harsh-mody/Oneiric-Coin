@@ -6,7 +6,7 @@ const {cryptoHash} = require('../util');
 describe('Block', () => {
 
     const timestamp = 2000;
-    const lastHash = 'LHash';
+    const lastHash = 'Last-Hash';
     const hash = 'bar-hash';
     const data = ['blockchain', 'data'];
     const nonce = 1;

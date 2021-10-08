@@ -1,6 +1,7 @@
 const Transaction = require('./transaction');
 const Wallet= require('./index');
 const { verifySignature } = require('../util');  
+const { REWARD_INPUT, MINING_REWARD } = require('../config');
 
 describe('Transaction',()=>{
    let transaction, senderWallet, recipient, amount;
@@ -99,15 +100,13 @@ describe('Transaction',()=>{
 describe('update()',()=>{
     let originalSignature, originalSenderOutput, nextRecipient, nextAmount;
 
-    
-
     describe('and the amount is valid',()=>{
 
         beforeEach(()=>{
-            originalSignature=transaction.input.signature;
-            originalSenderOutput=transaction.outputMap[senderWallet.publicKey];
-            nextRecipient='next-recipient';
-            nextAmount = 50;
+            originalSignature = transaction.input.signature;
+            originalSenderOutput = transaction.outputMap[senderWallet.publicKey];
+            nextRecipient = 'world bank';
+            nextAmount = 69;
             transaction.update({senderWallet, recipient: nextRecipient, amount: nextAmount});
          });
      
@@ -132,18 +131,18 @@ describe('update()',()=>{
 
         describe('and another update for the same recipient',()=>{
              let addedAmount;
-             beforeEach(()=>{
-                addedAmount = 80;
+             beforeEach(() => {
+                addedAmount = 69;
                 transaction.update({
                      senderWallet, recipient : nextRecipient,amount : addedAmount
                 });
              });
 
-             it('adds to the recipient amount',()=>{
+             it('adds to the recipient amount',() => {
                  expect(transaction.outputMap[nextRecipient]).toEqual(nextAmount + addedAmount);
              });
 
-             it('subtracts the amount from original sender output amount',()=>{
+             it('subtracts the amount from original senders output amount',() => {
                  expect(transaction.outputMap[senderWallet.publicKey]).toEqual(originalSenderOutput - nextAmount - addedAmount);
              });
         });
@@ -162,5 +161,25 @@ describe('update()',()=>{
 
 });
 
+
+describe('rewardTransaction()',() => {
+
+    let rewardTransaction, minerWallet;
+    
+    beforeEach(()=>{
+       minerWallet = new Wallet();
+       rewardTransaction = Transaction.rewardTransaction({minerWallet});
+    });
+
+    it('creates a transaction with reward input',() => {
+       expect(rewardTransaction.input).toEqual(REWARD_INPUT);
+    });
+
+    it('creates one transaction for the miner with the `MINING_REWARD`',() => {
+        expect(rewardTransaction.outputMap[minerWallet.publicKey]).toEqual( MINING_REWARD );
+    });
+
+ 
 }); 
  
+});
