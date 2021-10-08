@@ -13,7 +13,6 @@ describe('cryptoHash()',() => {
     });
 
     it('produces the unique hash when the properties have changd on an input',() => {
-
         const oneiric = {};
         const originalHash = cryptoHash(oneiric);
         oneiric['a'] = "a";
