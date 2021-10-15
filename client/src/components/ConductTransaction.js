@@ -39,13 +39,11 @@ class ConductTransaction extends Component{
 
   render() {
       return(
-          <div className='ConductTransaction'>
-              <div><h3>Conduct a Transaction!</h3></div>
-              <hr/>
-              <Link to='/'>Home</Link>
+          <div className='ConductTransaction' style={{textAlign: 'center', padding: '0 300px'}}>
+              <div><h3 style={{color: 'white', fontSize: '3rem'}}>Conduct a Transaction!</h3></div>
               <br/>
               <br/>
-              <h4>Known Addresses</h4>
+              <h4 style={{color: "white"}}>Known Addresses</h4>
               {
                   this.state.knownAddresses.map(knownAddress=>{
                       return(

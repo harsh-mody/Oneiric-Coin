@@ -1,0 +1,110 @@
+.pf{
+    font-family: 'Playfair Display', serif;;
+}
+
+a, a:hover{
+    color: #FEFFFF;
+    text-decoration: none;
+}
+
+.inline{
+    display: inline;
+}
+
+.Header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 20px;
+    height: 80px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: white solid thin;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    width: 15%;
+    height: 100%;
+    align-items:center;
+}
+
+.brand-name{
+    font-size: 1.5rem;
+    color: #17252A;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.brand-name a{
+	color: #17252a;
+	padding-top: 10px;
+}
+
+.logo{
+	display: inline-block;
+}
+.Navbar{
+    padding-top: 15px;
+    margin-right: 20px;
+}
+
+.Menu a{
+    color: ##DEF2F1;
+}
+
+.Blocks{
+	text-align:center;
+	padding: 0px 250px;
+}
+
+.Blocks h3{
+	font-family: 'Source sans pro';
+	font-size: 3rem;
+	color: #FEFFFF;
+	margin-bottom: 50px;
+}
+
+.Block input{
+	color: #17252a;
+	background: #FEFFFF;
+	width: 70px;
+}
+
+.Block{
+	border-bottom: solid white thin;
+	padding: 40px 0px;
+	color: #FEFFFF;
+	font-size: 1.4rem;
+}
+
+.Menu{
+    display: inline;
+    margin-right: 30px;
+}
+
+html{
+    height: 100%;
+}
+
+.WalletInfo{
+    text-align: center;
+    color: #DEF2F1;
+}
+
+.WalletInfo span{
+    color: #17252A;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.3rem;
+}
+
+.menu img{
+    padding-top: 15px;
+}
+
+.WalletInfo img{
+    margin-bottom: 40px;
+}
+

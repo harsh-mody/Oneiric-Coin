@@ -27,10 +27,8 @@ class Blocks extends Component{
     render(){
         console.log('this.state',this.state);
         return(
-          <div>
-              <div><Link to='/'>Home</Link></div>
-              <br/><br/>
-              <h3>Blocks</h3>
+          <div className="Blocks">
+	      <h3>Blocks</h3>
               <div>
                   {
                       [...Array(Math.ceil(this.state.blocksLength/5)).keys()].map(key=>{

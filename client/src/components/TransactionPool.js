@@ -46,10 +46,9 @@ class TransactionPool extends Component{
 
     render(){
         return(
-            <div className='TransactionPool'>
-                <Link to='/'>Home</Link>
+            <div className='TransactionPool' style={{color: 'white', textAlign: 'center', padding: '0px 300px'}}>
                 <br/><br/>
-                <div><h3>Transaction Pool</h3></div>
+                <div><h3 style={{fontSize: '3rem'}}>Transaction Pool</h3></div>
                 {
                     Object.values(this.state.transactionPoolMap).map(transaction=>{
                         return(

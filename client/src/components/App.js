@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import logo from '../assets/logo.png';
 import ConductTransaction from "./ConductTransaction";
-
+import './App.css'
 class App extends Component{
     state={walletInfo:{}};
 
@@ -18,25 +18,15 @@ class App extends Component{
 
     render(){
         const {address, balance}= this.state.walletInfo;
-        return (
-            <div className='App'>
-                <img className='logo' src={logo}></img>
-                <br/>
-                <div><h2>Welcome to the CryptoChain!</h2></div>
-                <hr/><br/>
-                <div><Link to='/blocks'>Blocks</Link></div>
-                <br/>
-                <div><Link to='/conduct-transaction'>Conduct Transaction</Link></div>
-                <br/>
-                <div><Link to='transaction-pool'>Transaction Pool</Link></div>
-                <br/><br/>
-                <div className='WalletInfo'>
-                    <div>Address: {address}</div>
-                    <div>Balance: {balance}</div>
-                </div>
-            </div>
-        );
-    }
+    return (
+      <div className='App'>
+        <div className='WalletInfo'>
+          <div><img src= {logo} alt = "Wallet" height="250px"/></div>
+          <div style={{marginBottom: "15px"}}><span>Address:</span> {address}</div>
+          <div><span>Balance:</span> {balance} coins</div>
+        </div>
+      </div>
+    );    }
 }
 
 export default App;
