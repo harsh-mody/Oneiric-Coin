@@ -44,8 +44,7 @@ describe('genesis',()=>{
         });
 
         it('sets the `lastHash` to be the hash of the lastBlock',()=>{
-            expect(minedBlock.lastHash).toEqual(lastBlock.hash);  // In jest, expected value goes into the toEqual & to be Equal value goes into the expected value
-                                                            // which isn't the regular rule in the programming world.
+            expect(minedBlock.lastHash).toEqual(lastBlock.hash); 
         });
 
         it('sets the `data`',()=>{

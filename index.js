@@ -12,11 +12,6 @@ const TransactionMiner=require('./app/transaction-miner');
 
 
 const isDevelopment=process.env.ENV==='development';
-/*
-const REDIS_URL= isDevelopment ?
-    'redis://127.0.0.1.6379' :
-    'redis:WEB_URL_HERE';
-*/
 const app=express();
 const blockchain=new Blockchain();
 const wallet=new Wallet();
@@ -88,9 +83,6 @@ if(isDevelopment){
     }
 }
 
-//setTimeout(()=> pubsub.broadcastChain(),1000);
-
-
 const PORT= process.env.PORT || PEER_PORT || DEFAULT_PORT;
 app.listen(PORT,()=>{
     console.log(`listening at localhost port:${PORT}`);
@@ -100,7 +92,7 @@ app.listen(PORT,()=>{
 });
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname,'client/dist')));  //Adding static pages to the frontend
+app.use(express.static(path.join(__dirname,'client/dist'))); 
 
 
 app.get('/api/blocks',(req,res)=>{

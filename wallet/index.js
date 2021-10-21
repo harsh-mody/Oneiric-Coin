@@ -44,9 +44,7 @@ class Wallet{
                 break;
             }
         }
-
         return hasConductedTransaction ? outputsTotal : STARTING_BALANCE + outputsTotal;
-
     }
 }
 

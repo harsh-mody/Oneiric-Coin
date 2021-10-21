@@ -12,11 +12,10 @@ class Block{
         this.difficulty=difficulty;
     }
     static genesis(){
-        return new Block(GENESIS_DATA);                 //Factory Pattern Method
+        return new Block(GENESIS_DATA);                 
     }
     
     static mineBlock({lastBlock, data}){
-        //const timestamp=Date.now();
         let {difficulty}=lastBlock;
         let nonce=0,hash,timestamp;
         do{
@@ -50,14 +49,4 @@ class Block{
         }
     }
 }
-/*
-var block=new Block(
-    {timestamp:new Date().getTime(),
-      lastHash:'foo-lastHash',
-      hash:'fooHash',
-      data:'myData'});
-
-console.log(block);
-*/
-
 module.exports=Block;

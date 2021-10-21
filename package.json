@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --watchAll",
     "start": "npm run build-client & npm run start-redis && node index.js",
-    "start-peer":"npm run build-client & npm run start-redis && cross-env GENERATE_PEER_PORT='true' node index.js",
+    "start-peer": "npm run build-client & npm run start-redis && cross-env GENERATE_PEER_PORT='true' node index.js",
     "start-redis": "redis-server --daemonize yes",
     "dev": "npm run dev-client & npm run start-redis && cross-env ENV='development' nodemon index.js",
     "dev-peer": "npm run dev-client & npm run start-redis && cross-env GENERATE_PEER_PORT='true' ENV='development' nodemon index.js",
@@ -38,7 +38,7 @@
     "history": "^4.10.1",
     "parcel-bundler": "^1.12.3",
     "react": "^16.9.0",
-    "react-bootstrap": "^1.0.0-beta.12",
+    "react-bootstrap": "^1.6.4",
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.0.1",
     "redis": "^3.1.1",
